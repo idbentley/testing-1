@@ -35,7 +35,7 @@ python:
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   description: Python Client SDK for the Mistral AI API.
-  enableCustomCodeRegions: true
+  enableCustomCodeRegions: false
   enumFormat: union
   envVarPrefix: MISTRAL
   fixFlags:

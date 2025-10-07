@@ -3,13 +3,19 @@ speakeasyVersion: 1.606.10
 sources:
     mistral-azure-source:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-azure:main
+            - location: /home/ian/Documents/mistral/mistral-azure.yaml
+        registry:
+            location: registry.speakeasyapi.dev/ian/ian/mistral-azure-source
     mistral-google-cloud-source:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-google-cloud:main
+            - location: /home/ian/Documents/mistral/mistral-google-cloud.yaml
+        registry:
+            location: registry.speakeasyapi.dev/ian/ian/mistral-google-cloud-source
     mistral-openapi:
         inputs:
-        -   location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi:main
+            - location: /home/ian/Documents/mistral/mistral.yaml
+        registry:
+            location: registry.speakeasyapi.dev/ian/ian/mistral-openapi
 targets:
     mistralai-azure-sdk:
         target: python
@@ -18,10 +24,6 @@ targets:
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-azure-code-samples
-            blocking: false
     mistralai-gcp-sdk:
         target: python
         source: mistral-google-cloud-source
@@ -29,17 +31,9 @@ targets:
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-google-cloud-code-samples
-            blocking: false
     mistralai-sdk:
         target: python
         source: mistral-openapi
         publish:
             pypi:
                 token: $pypi_token
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/mistral-dev/mistral-dev/mistral-openapi-code-samples
-            blocking: false
